@@ -33,17 +33,13 @@ import { AuthService } from '@core/services/auth.service';
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
             <div class="input-row">
               <div class="input-group half">
-                <ion-item lines="none" class="input-item">
-                  <ion-input formControlName="firstName" placeholder="Prénom"></ion-input>
-                </ion-item>
+                <ion-input fill="outline" label="Prénom" labelPlacement="stacked" formControlName="firstName" placeholder="Prénom" class="custom-input"></ion-input>
                 <p *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="error-text">
                   Requis
                 </p>
               </div>
               <div class="input-group half">
-                <ion-item lines="none" class="input-item">
-                  <ion-input formControlName="lastName" placeholder="Nom"></ion-input>
-                </ion-item>
+                <ion-input fill="outline" label="Nom" labelPlacement="stacked" formControlName="lastName" placeholder="Nom" class="custom-input"></ion-input>
                 <p *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="error-text">
                   Requis
                 </p>
@@ -51,20 +47,14 @@ import { AuthService } from '@core/services/auth.service';
             </div>
 
             <div class="input-group">
-              <ion-item lines="none" class="input-item">
-                <ion-icon name="mail-outline" slot="start"></ion-icon>
-                <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
-              </ion-item>
+              <ion-input fill="outline" label="Email" labelPlacement="stacked" formControlName="email" type="email" placeholder="Email" class="custom-input"></ion-input>
               <p *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-text">
                 Email invalide
               </p>
             </div>
 
             <div class="input-group">
-              <ion-item lines="none" class="input-item">
-                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-                <ion-input formControlName="password" type="password" placeholder="Mot de passe (min. 6 caractères)"></ion-input>
-              </ion-item>
+              <ion-input fill="outline" label="Mot de passe" labelPlacement="stacked" formControlName="password" type="password" placeholder="Mot de passe (min. 6 caractères)" class="custom-input"></ion-input>
               <p *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-text">
                 Min. 6 caractères
               </p>
@@ -162,15 +152,13 @@ import { AuthService } from '@core/services/auth.service';
       flex: 1;
     }
 
-    .input-item {
+    .custom-input {
       --background: #f8fafc;
-      border-radius: 12px;
+      --border-radius: 12px;
       --padding-start: 16px;
-    }
-
-    .input-item ion-icon {
-      color: #64748b;
-      margin-right: 12px;
+      --padding-end: 16px;
+      --padding-top: 16px;
+      --padding-bottom: 16px;
     }
 
     .error-text {

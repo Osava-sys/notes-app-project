@@ -20,17 +20,11 @@ import { AuthService } from '@core/services/auth.service';
           </div>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
             <div class="input-group">
-              <ion-item lines="none" class="input-item">
-                <ion-icon name="mail-outline" slot="start"></ion-icon>
-                <ion-input type="email" placeholder="Adresse email" formControlName="email"></ion-input>
-              </ion-item>
+              <ion-input type="email" fill="outline" label="Email" labelPlacement="stacked" placeholder="Adresse email" formControlName="email" class="custom-input"></ion-input>
               <p *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text">Email invalide</p>
             </div>
             <div class="input-group">
-              <ion-item lines="none" class="input-item">
-                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-                <ion-input type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
-              </ion-item>
+              <ion-input type="password" fill="outline" label="Mot de passe" labelPlacement="stacked" placeholder="Mot de passe" formControlName="password" class="custom-input"></ion-input>
               <p *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-text">Mot de passe requis</p>
             </div>
             <ion-button expand="block" type="submit" [disabled]="loginForm.invalid || loading" class="submit-btn">
@@ -54,8 +48,7 @@ import { AuthService } from '@core/services/auth.service';
     .app-title { font-size: 28px; font-weight: 800; color: #1e1b4b; margin: 0; }
     .app-subtitle { color: #64748b; margin-top: 8px; font-size: 15px; }
     .input-group { margin-bottom: 16px; }
-    .input-item { --background: #f8fafc; border-radius: 14px; --padding-start: 16px; }
-    .input-item ion-icon { color: #64748b; margin-right: 12px; font-size: 20px; }
+    .custom-input { --background: #f8fafc; --border-radius: 14px; --padding-start: 16px; --padding-end: 16px; --padding-top: 16px; --padding-bottom: 16px; }
     .error-text { color: #ef4444; font-size: 13px; margin: 4px 0 0 12px; }
     .submit-btn { --background: linear-gradient(135deg,#4f46e5,#7c3aed); --border-radius: 14px; height: 52px; font-weight: 600; margin-top: 24px; }
     .register-link { text-align: center; }
